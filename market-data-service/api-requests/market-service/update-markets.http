@@ -1,0 +1,6 @@
+//update markets
+
+PUT localhost:8080/markets/
+Content-Type: application/json
+
+###

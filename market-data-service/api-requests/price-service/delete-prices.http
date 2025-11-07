@@ -1,0 +1,4 @@
+### Delete price list
+DELETE localhost:8080/prices/
+
+###

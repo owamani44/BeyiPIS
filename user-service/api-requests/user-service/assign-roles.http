@@ -1,0 +1,9 @@
+POST localhost:8080/users/assign-role
+Content-Type: application/json
+
+{
+  "username": "aagnes",
+  "roleIDs": [
+    "8e50a4dc-5800-4912-8101-21db1152ecfd"
+  ]
+}

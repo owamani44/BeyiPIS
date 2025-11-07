@@ -1,0 +1,67 @@
+### GET request to example server
+POST http://localhost:8080/markets
+Content-Type: application/json
+
+#  [
+#    {
+#      "marketName": "Nakasero Market",
+#      "district": "Kampala",
+#      "region": "Central"
+#    },
+#    {
+#    "marketName": "Owino Market (St. Balikuddembe Market)",
+#    "district": "Kampala",
+#    "region": "Central"
+#    },
+#    {
+#    "marketName": "Kalerwe Market",
+#    "district": "Kampala",
+#    "region": "Central"
+#    },
+#    {
+#    "marketName": "Gulu Main Market",
+#    "district": "Gulu City",
+#    "region": "Northern"
+#    },
+#    {
+#    "marketName": "Mbale Central Market",
+#    "district": "Mbale City",
+#    "region": "Eastern"
+#    },
+#    {
+#    "marketName": "Mbarara Central Market",
+#    "district": "Mbarara City",
+#    "region": "Western"
+#    },
+#    {
+#    "marketName": "Fort Portal Market (Mpanga Market)",
+#    "district": "Fort Portal City",
+#    "region": "Western"
+#    },
+#    {
+#    "marketName": "Lira Main Market",
+#    "district": "Lira City",
+#    "region": "Northern"
+#    },
+#    {
+#    "marketName": "Jinja Central Market",
+#    "district": "Jinja City",
+#    "region": "Eastern"
+#    },
+#    {
+#    "marketName": "Masaka Central Market",
+#    "district": "Masaka City",
+#    "region": "Central"
+#    }
+#]
+[
+{
+  "marketName": "Kame Valley Market",
+  "district": "Mukono",
+  "region": "Central"
+}
+]
+
+
+
+###

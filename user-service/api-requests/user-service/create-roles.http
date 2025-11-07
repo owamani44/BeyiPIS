@@ -1,0 +1,9 @@
+### GET request to example server
+POST localhost:8080/roles
+Content-Type: application/json
+
+{
+  "roleName": "User"
+}
+
+###

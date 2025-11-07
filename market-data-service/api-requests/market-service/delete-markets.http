@@ -1,0 +1,5 @@
+//remove market from db
+DELETE localhost:8080/markets/0b58d6bd-b467-4982-8036-c73182cd7e24
+Content-Type: application/json
+
+###

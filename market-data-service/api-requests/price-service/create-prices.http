@@ -1,0 +1,16 @@
+//create prices
+###
+POST localhost:8080/prices
+Content-Type: application/json
+
+{
+  "prodName": "Banana",
+  "price": "25000",
+  "marketName": "Kalerwe Market",
+  "district": "Kampala",
+  "region": "Central",
+  "createdDate": ""
+
+}
+###
+

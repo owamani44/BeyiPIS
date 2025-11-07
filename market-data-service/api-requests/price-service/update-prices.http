@@ -1,0 +1,16 @@
+### GET request to example server
+PUT localhost:8080/prices/bccdd507-4964-48db-bbee-3e52a00917da
+Content-Type: application/json
+
+{
+  "prodName": "Banana",
+  "price": "25000",
+  "marketName": "Kalerwe Market",
+  "district": "Kampala",
+  "region": "Central",
+  "quantity": "Bunch",
+"createdDate": ""
+}
+###
+
+###
