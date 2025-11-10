@@ -1,11 +1,9 @@
 package com.renew.userservice.controller;
 
-import com.backend.BeyiAPI.dto.roleDTOs.RoleDTO;
-import com.backend.BeyiAPI.dto.userDTOs.UserRequestDTO;
-import com.backend.BeyiAPI.dto.userDTOs.UserResponseDTO;
-import com.backend.BeyiAPI.model.User;
-//import com.backend.BeyiAPI.service.RoleAssignmentService;
-import com.backend.BeyiAPI.service.UserService;
+
+import com.renew.userservice.dto.userDTOs.UserRequestDTO;
+import com.renew.userservice.dto.userDTOs.UserResponseDTO;
+import com.renew.userservice.service.UserService;
 import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import org.springframework.http.ResponseEntity;

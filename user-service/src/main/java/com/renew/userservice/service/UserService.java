@@ -5,6 +5,7 @@ import com.renew.userservice.dto.userDTOs.UserRequestDTO;
 import com.renew.userservice.dto.userDTOs.UserResponseDTO;
 import com.renew.userservice.exception.EmailAlreadyExists;
 import com.renew.userservice.exception.UserNotFoundException;
+import com.renew.userservice.kafka.kafkaProducer;
 import com.renew.userservice.mapper.UserMapper;
 import com.renew.userservice.model.User;
 import com.renew.userservice.repo.UserRepo;
@@ -17,11 +18,14 @@ import java.util.UUID;
 @Service
 public class UserService {
 
+    private final kafkaProducer kafkaProducer;
     public UserRepo userRepo;
     public static UserMapper userMapper;
 
-    public UserService(UserRepo userRepo) {
+    public UserService(UserRepo userRepo, kafkaProducer kafkaProducer)
+    {
         this.userRepo = userRepo;
+        this.kafkaProducer = kafkaProducer;
     }
 
 
@@ -55,6 +59,8 @@ public class UserService {
         newUser.setUsername(username);
 
         User savedUser = userRepo.save(newUser);
+
+        kafkaProducer.sendEvent(newUser);
 
         return UserMapper.toDTO(newUser);
     }
