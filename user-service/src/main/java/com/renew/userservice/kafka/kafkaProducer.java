@@ -18,21 +18,19 @@ public class kafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendEvent(User user){
-        UserEvent event = UserEvent.newBuilder()
-                .setUserID(user.getUserid().toString())
-                .setUsername(user.getUsername())
-                .setEmail(user.getEmail())
-                .setTel(user.getTel())
-                .setDistrict(user.getDistrict())
-                .setEventType("USER EVENT CREATED")
-                .build();
+    public void sendEvent(UserEvent event){
+  //     UserEvent event = UserEvent.newBuilder()
+//                .setUserID(user.getUserid().toString())
+//                .setUsername(user.getUsername())
+//                .setEmail(user.getEmail())
+//                .setTel(user.getTel())
+//                .setDistrict(user.getDistrict())
+//                .setEventType("USER EVENT CREATED")
+//                .build();
         try {
-            kafkaTemplate.send("user",event.toByteArray());
+            kafkaTemplate.send("UserEvent",event.toByteArray());
         } catch (Exception e) {
             log.error("Error while getting event: {} ",event);
         }
-
-
     }
 }

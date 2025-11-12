@@ -1,5 +1,6 @@
 package com.renew.notificationservice.kafka;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -13,11 +14,20 @@ public class kafkaConsumer {
 
     @KafkaListener(topics = "user", groupId = "notification-service")
     public void consumeEvent(byte[] event){
+
         try {
             UserEvent userEvent= UserEvent.parseFrom(event);
-        } catch (Exception e) {
-            log.error("Error deserializing event" + e.getMessage());
+            log.info("Received User Event:[userID{},username{}, email{},tel{},district{}]",
+                    userEvent.getUserID(),
+                    userEvent.getUsername(),
+                    userEvent.getEmail(),
+                    userEvent.getTel(),
+                    userEvent.getDistrict()
+                    );
+        } catch (InvalidProtocolBufferException e) {
+            log.error("Error Deserializing event {}" ,e.getMessage());
         }
+
     }
 
 }

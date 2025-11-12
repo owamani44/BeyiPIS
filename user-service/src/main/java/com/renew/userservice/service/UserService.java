@@ -10,6 +10,7 @@ import com.renew.userservice.mapper.UserMapper;
 import com.renew.userservice.model.User;
 import com.renew.userservice.repo.UserRepo;
 import org.springframework.stereotype.Service;
+import user.events.UserEvent;
 
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class UserService {
 
     private final kafkaProducer kafkaProducer;
     public UserRepo userRepo;
-    public static UserMapper userMapper;
+
 
     public UserService(UserRepo userRepo, kafkaProducer kafkaProducer)
     {
@@ -30,7 +31,7 @@ public class UserService {
 
 
     public String generateUsername(String firstName, String lastName) {
-        String base = (firstName.substring(0, 1) + lastName).toLowerCase();
+        String base = (firstName.substring(0,1) + lastName).toLowerCase();
 
         String username = base;
         int counter = 1;
@@ -60,7 +61,15 @@ public class UserService {
 
         User savedUser = userRepo.save(newUser);
 
-        kafkaProducer.sendEvent(newUser);
+        UserEvent event = UserEvent.newBuilder()
+                .setUserID(savedUser.getUserid().toString())
+                .setUsername(savedUser.getUsername())
+                .setEmail(savedUser.getEmail())
+                .setTel(savedUser.getTel())
+                .setDistrict(savedUser.getDistrict())
+                .setEventType("USER EVENT CREATED")
+                .build();
+        kafkaProducer.sendEvent(event);
 
         return UserMapper.toDTO(newUser);
     }
