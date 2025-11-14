@@ -1,0 +1,15 @@
+server:
+  port: 8083
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        -id: user-service-routes
+        uri: http://localhost/8080
+
+        predicate:
+            -path:/api/user/**
+        filters:
+              -strip-prefix=1
+

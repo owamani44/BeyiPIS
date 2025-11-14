@@ -19,7 +19,7 @@ public class kafkaProducer {
     }
 
     public void sendEvent(UserEvent event){
-  //     UserEvent event = UserEvent.newBuilder()
+ //       UserEvent event = UserEvent.newBuilder()
 //                .setUserID(user.getUserid().toString())
 //                .setUsername(user.getUsername())
 //                .setEmail(user.getEmail())

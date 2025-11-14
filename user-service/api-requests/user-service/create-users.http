@@ -5,9 +5,9 @@ POST http://localhost:8080/users
 Content-Type: application/json
 
 {
-  "firstName": "AgabaTest",
+  "firstName": "AgabaTest3",
   "lastName": "Agnes",
-  "email": "kafkatest2@gmail.com",
+  "email": "kafkatest3@gmail.com",
   "tel": "0772365100",
   "district": "Mukono",
   "userCreatedAt": "",
