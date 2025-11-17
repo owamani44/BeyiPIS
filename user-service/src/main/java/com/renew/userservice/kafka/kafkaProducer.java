@@ -3,6 +3,7 @@ package com.renew.userservice.kafka;
 import com.renew.userservice.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import user.events.UserEvent;
@@ -18,17 +19,17 @@ public class kafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void sendEvent(UserEvent event){
- //       UserEvent event = UserEvent.newBuilder()
-//                .setUserID(user.getUserid().toString())
-//                .setUsername(user.getUsername())
-//                .setEmail(user.getEmail())
-//                .setTel(user.getTel())
-//                .setDistrict(user.getDistrict())
-//                .setEventType("USER EVENT CREATED")
-//                .build();
+    public void sendEvent(User user){
+        UserEvent event = UserEvent.newBuilder()
+                .setUserID(user.getUserid().toString())
+                .setUsername(user.getUsername())
+                .setEmail(user.getEmail())
+                .setTel(user.getTel())
+                .setDistrict(user.getDistrict())
+                .setEventType("USER EVENT CREATED")
+                .build();
         try {
-            kafkaTemplate.send("UserEvent",event.toByteArray());
+            kafkaTemplate.send("user",event.toByteArray());
         } catch (Exception e) {
             log.error("Error while getting event: {} ",event);
         }
