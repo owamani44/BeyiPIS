@@ -61,17 +61,9 @@ public class UserService {
 
         User savedUser = userRepo.save(newUser);
 
-//        UserEvent event = UserEvent.newBuilder()
-//                .setUserID(savedUser.getUserid().toString())
-//                .setUsername(savedUser.getUsername())
-//                .setEmail(savedUser.getEmail())
-//                .setTel(savedUser.getTel())
-//                .setDistrict(savedUser.getDistrict())
-//                .setEventType("USER EVENT CREATED")
-//                .build();
-        kafkaProducer.sendEvent(newUser);
+        kafkaProducer.sendEvent(savedUser);
 
-        return UserMapper.toDTO(newUser);
+        return UserMapper.toDTO(savedUser);
     }
 
 

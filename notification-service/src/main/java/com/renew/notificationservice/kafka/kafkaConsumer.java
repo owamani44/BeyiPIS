@@ -12,7 +12,7 @@ public class kafkaConsumer {
 
     private static final Logger log = LoggerFactory.getLogger(kafkaConsumer.class);
 
-    @KafkaListener(topics = "user", groupId = "notification-service")
+    @KafkaListener(topics = "userEvent", groupId = "notification-service")
     public void consumeEvent(byte[] event){
 
         try {
