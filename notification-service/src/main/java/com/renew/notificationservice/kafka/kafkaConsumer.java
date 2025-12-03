@@ -17,7 +17,7 @@ public class kafkaConsumer {
 
         try {
             UserEvent userEvent= UserEvent.parseFrom(event);
-            log.info("Received User Event:[userID{},username{}, email{},tel{},district{}]",
+            log.info("Received User Event:[userID:{},username:{}, email:{},tel:{},district:{}]",
                     userEvent.getUserID(),
                     userEvent.getUsername(),
                     userEvent.getEmail(),

@@ -7,6 +7,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 import user.events.UserEvent;
 
+import static java.lang.String.format;
+
 
 @Service
 public class kafkaProducer {
@@ -28,6 +30,7 @@ public class kafkaProducer {
                 .setEventType("USER EVENT CREATED")
                 .build();
         try {
+            log.info(format("Sending message to topicUser:: %s", event));
             kafkaTemplate.send("userEvent",event.toByteArray());
         } catch (Exception e) {
             log.error("Error while getting event: {} ",event);

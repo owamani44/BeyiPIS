@@ -1,5 +1,5 @@
 //deletes users from the database
-DELETE localhost:8080/users/0b26f32b-ff55-495f-8138-0e37ef616ca6
+DELETE localhost:8080/users/8e50a4dc-5800-4912-8101-21db1152ecfd
 Content-Type: application/json
 
 ###
