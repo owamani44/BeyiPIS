@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+    font-size: large;
+}
+.login{
+    flex-direction: column;
+    margin:auto;
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    border-radius: 10px;
+    width: 500px;
+    background-color:white;
+    color: black;
+}
+.form input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    justify-content: center;
+    border: 1px solid darkgreen;
+}
+.form p{
+    text-align: center;
+}
+.login h1{
+    color:rgba(14, 192, 73, 0.792);
+    text-align: center;
+}
+.login h2{
+    text-align: center;
+}
+.btn{
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    justify-content: space-between;
+    gap: 30px;
+    width: 400px;
+}
+.btn button{
+    margin: auto;
+    border-radius: 10px;
+    border: none;
+    align-content: center;
+    border-spacing: 40px;
+    width: 150px;
+    animation: backwards;
+    cursor: pointer;
+    background-color: rgba(14, 192, 73, 0.792);
+    color: white;
+}
+
+.bodi{
+    background-color: white;
+
+}
