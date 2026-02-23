@@ -30,3 +30,23 @@ BeyiPIS addresses a common challenge in agricultural and commodity markets:
 
 
 
+## 🛠️ Getting Started
+
+### Requirements
+
+Make sure you have installed:
+
+- **Docker** & **Docker Compose**
+- **Node.js** (v16+)
+- **Java JDK** (for backend services)
+- **MongoDB / PostgreSQL** (optional if running via compose)
+
+
+
+### Set Up Locally (Dev)
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/owamani44/BeyiPIS.git
+   cd BeyiPIS
+
